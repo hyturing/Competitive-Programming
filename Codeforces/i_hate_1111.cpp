@@ -31,7 +31,7 @@ const int32_t mm = 998244353;
    1111111 = 1000*1111 + 111 = 1000*(100*11 + 11) + 111 = (1000*101)*11 + 111
    And so on.
 
-   So let us consider if the given number is X and if we can represent number X as
+   So let us consider if the given number is X, we can represent number X as
 
    X = A*111 + B*11, where A >= 0 and B >= 0
 
