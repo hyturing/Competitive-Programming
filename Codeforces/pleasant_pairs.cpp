@@ -4,7 +4,7 @@ using namespace std;
 
 #define ll  			long long
 #define endl			"\n"
-#define mp				make_pair
+#define mp			make_pair
 #define pb  			push_back
 #define pob 			pop_back
 #define pf  			push_front
