@@ -1,11 +1,10 @@
 /* https://codeforces.com/contest/1538/problem/D */ 
 /* hyturing - Hemant Kumar Yadav */
-
 #include "bits/stdc++.h"
 using namespace std;
 
-#define ll              long long 
-#define endl            "\n"
+#define mp              make_pair
+#define ll              long long
 #define pb              push_back
 #define pob             pop_back
 #define pf              push_front
@@ -16,6 +15,7 @@ using namespace std;
 #define ss              second
 #define pii             pair<int, int>
 #define FIO             ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
+#define endl            "\n"
 
 const ll INF = 1e18;
 const int32_t mod = 1e9+7;
