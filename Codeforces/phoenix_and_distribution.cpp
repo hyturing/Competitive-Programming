@@ -1,3 +1,4 @@
+/* https://codeforces.com/contest/1348/problem/C */
 /* hyturing - Hemant Kumar Yadav */
 #include "bits/stdc++.h"
 using namespace std; 
@@ -52,8 +53,6 @@ int main(){
 			}
 			cout << endl;
 		}
-
-
 	}
 
 	return 0;
