@@ -41,12 +41,18 @@ int main(){
     w(t){
         int n, k;
         cin >> n >> k;
+
         ll arr[n]; rep(i,0,n) cin >> arr[i];
+        
         pair<ll, ll> mn{INF, -1};
+        
         rep(i,0,n-k){
             ll dist = arr[i+k] - arr[i];
+            
             pair<ll, ll> temp;
+            
             temp = mp(dist, arr[i]+dist/2);
+            
             mn  = min(mn, temp);
         }
 
