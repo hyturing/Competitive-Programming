@@ -44,7 +44,7 @@ const int32_t mm = 998244353;
 	as such and returns true. If that was not possible (because it is already at the largest possible permutation), 
 	it rearranges the elements according to the first permutation (sorted in ascending order) and returns false or 0.
 
-	Time Complexity = O(6*(n+m))
+	Time Complexity = O(n+m)
 */
 
 int main(){
