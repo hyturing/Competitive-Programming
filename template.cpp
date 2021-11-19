@@ -7,8 +7,6 @@ using namespace std;
 #define pb              push_back
 #define pob             pop_back
 #define pf              push_front
-#define pof             pop_front
-#define w(t)            int t; cin>>t; while(t--)
 #define rep(i,a,b)      for(int i = a; i < b; i++)
 #define ff              first
 #define ss              second
@@ -22,12 +20,18 @@ const int32_t mm = 998244353;
 
 /*============================================================================================*/
 
+void solve(){
+
+}
+
 int main(){
     FIO
     
-    w(t){
-        
-
+    int t;
+    cin >> t;
+    // t = 1;
+    while(t--){
+        solve();
     }
 
     return 0;
