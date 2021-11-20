@@ -20,14 +20,13 @@ void solve(){
 
 	sort(v.begin(), v.end());
 
-	int cnt(0);
-
-	for(int i=1; i<n; i++){
-		if(v[i].second >= v[i-1].second) cnt++;
+	int k = min(v[0].first, v[0].second);
+	for(int i = 1; i < n; i++){
+		if(v[i].second >= k) k = v[i].second;
+		else k = v[i].first;
 	}
 
-	if(cnt==n-1) cout << v[n-1].second;
-	else cout << v[n-1].first;
+	cout << k;
 		
 	return;
 }
