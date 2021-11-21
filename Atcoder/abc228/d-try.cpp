@@ -7,28 +7,28 @@ using namespace std;
 const ll  MOD = 1e9+7;
 
 void solve(){
-	int n, k;
-	cin >> n >> k;
-
-	vector<int> p(n);
-	for(int i = 0; i < n; i++){
-		int a, b, c;
-		cin >> a >> b >> c;
-		p[i] = a+b+c;
+	int q;
+	cin >> q;
+	ll n = 1048576;
+	vector<ll> a(n);
+	for(auto &x: a) x = -1;
+	// for(int i = 0; i < n-1; i++) a[i] = -1;
+	// for(auto x: a) cout << x; cout << endl;
+	while(q--){
+		ll t, x;
+		cin >> t >> x;
+		if (t==1){
+			ll h = x;
+			ll index = h%n;
+			while(a[index] != -1){
+				h++; 
+				index = h%n;
+			}
+			a[index] = x;
+		}
+		else cout << a[x%n] << endl;
 	}
-
-	vector<int> r=p;
-
-	sort(r.begin(), r.end());
-
-	for(auto x: p){
-		int me = x+300;
-		auto it = upper_bound(r.begin(), r.end(), me);
-		int rank = (int)(r.end()-it)+1;
-		cout << (rank <= k ? "Yes" : "No") << endl;
-
-	}
-
+	
 	return;
 }
 

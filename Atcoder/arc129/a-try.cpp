@@ -7,28 +7,9 @@ using namespace std;
 const ll  MOD = 1e9+7;
 
 void solve(){
-	int n, k;
-	cin >> n >> k;
-
-	vector<int> p(n);
-	for(int i = 0; i < n; i++){
-		int a, b, c;
-		cin >> a >> b >> c;
-		p[i] = a+b+c;
-	}
-
-	vector<int> r=p;
-
-	sort(r.begin(), r.end());
-
-	for(auto x: p){
-		int me = x+300;
-		auto it = upper_bound(r.begin(), r.end(), me);
-		int rank = (int)(r.end()-it)+1;
-		cout << (rank <= k ? "Yes" : "No") << endl;
-
-	}
-
+	int k;
+	for(int i = 24; i <= 68; i++){k=i^15; cout << k << " ";}
+	
 	return;
 }
 
