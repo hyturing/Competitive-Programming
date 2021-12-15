@@ -8,27 +8,23 @@ const ll  MOD = 1e9+7;
 void solve(){
 
 	// code here
-	int n;
-	cin >> n;
+	string s, k="";
+	cin >> s;
+	for(int i = 0; i < s.size(); i++) k += '0';
 
-	vector<pair<int,ll>> a(n);
-	for(auto &x: a){
-		cin >> x.first >> x.second;
+	vector<string> v;
+
+	while(s != k){
+		string temp="";
+		for(int i = 0; i < s.size(); i++){
+			if(s[i] != '0'){temp += '1'; s[i]--;}
+			else temp += '0';
+		}
+		v.push_back(temp);
 	}
 
-	int cur = a[0].first;
-
-	int cnt=2;
-	for(int i=1; i<n-1; i++){
-		if(a[i].first-a[i].second > cur){cnt++; cur = a[i].first;}
-		else if(a[i].first+a[i].second < a[i+1].first){cur = a[i].first+a[i].second; cnt++;}
-		else cur = a[i].first;
-	}
-
-	
-
-	if(n < 3) cout << n;
-	else cout << cnt;
+	cout << v.size() << "\n";
+	for(int i = 0; i < v.size(); i++) cout << stoi(v[i]) << " ";
 
 	return;
 }

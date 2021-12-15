@@ -9,26 +9,20 @@ void solve(){
 
 	// code here
 	int n;
-	cin >> n;
+	double x, y;
+	cin >> n >> x >> y;
 
-	vector<pair<int,ll>> a(n);
-	for(auto &x: a){
-		cin >> x.first >> x.second;
+	set<double> line;
+	for(int i = 0; i < n; i++){
+		double a, b;
+		cin >> a >> b;
+		a = x-a;
+		b = y-b;
+		if(a == 0) line.insert(100000);
+		else line.insert(b/a);
 	}
 
-	int cur = a[0].first;
-
-	int cnt=2;
-	for(int i=1; i<n-1; i++){
-		if(a[i].first-a[i].second > cur){cnt++; cur = a[i].first;}
-		else if(a[i].first+a[i].second < a[i+1].first){cur = a[i].first+a[i].second; cnt++;}
-		else cur = a[i].first;
-	}
-
-	
-
-	if(n < 3) cout << n;
-	else cout << cnt;
+	cout << line.size();
 
 	return;
 }

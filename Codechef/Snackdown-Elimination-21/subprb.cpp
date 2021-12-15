@@ -11,24 +11,11 @@ void solve(){
 	int n;
 	cin >> n;
 
-	vector<pair<int,ll>> a(n);
-	for(auto &x: a){
-		cin >> x.first >> x.second;
+	for(ll i = 1; i <= n; i++){
+		cout << i*2 << " ";
 	}
 
-	int cur = a[0].first;
-
-	int cnt=2;
-	for(int i=1; i<n-1; i++){
-		if(a[i].first-a[i].second > cur){cnt++; cur = a[i].first;}
-		else if(a[i].first+a[i].second < a[i+1].first){cur = a[i].first+a[i].second; cnt++;}
-		else cur = a[i].first;
-	}
-
-	
-
-	if(n < 3) cout << n;
-	else cout << cnt;
+	cout << "\n";
 
 	return;
 }
@@ -38,7 +25,7 @@ int32_t main(){
 	cin.tie(0); cout.tie(0);
 
 	int tc = 1;
-	// cin >> tc;
+	cin >> tc;
 	for(int i = 1; i <= tc; i++){
 		// cout << "Case #" << i << ": ";
 		solve();

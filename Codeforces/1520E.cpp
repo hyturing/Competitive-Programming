@@ -8,28 +8,37 @@ const ll  MOD = 1e9+7;
 void solve(){
 
 	// code here
+	
 	int n;
 	cin >> n;
+	string s;
+	cin >> s;
 
-	vector<pair<int,ll>> a(n);
-	for(auto &x: a){
-		cin >> x.first >> x.second;
+	int cnt(0);
+	for(auto &x: s){
+		cnt += (x == '*' ? 1 : 0);
 	}
 
-	int cur = a[0].first;
-
-	int cnt=2;
-	for(int i=1; i<n-1; i++){
-		if(a[i].first-a[i].second > cur){cnt++; cur = a[i].first;}
-		else if(a[i].first+a[i].second < a[i+1].first){cur = a[i].first+a[i].second; cnt++;}
-		else cur = a[i].first;
+	int pos = -1, curr = -1;
+	for(int i = 0; i < n; i++){
+		if(s[i] == '*'){
+			curr++;
+			if(curr == cnt/2){
+				pos = i;
+			}
+		}
 	}
 
-	
+	curr = pos-cnt/2;
+	ll ans = 0;
+	for(int i = 0; i < n; i++){
+		if(s[i] == '*'){
+			ans += abs(curr-i);
+			curr++;
+		}
+	}
 
-	if(n < 3) cout << n;
-	else cout << cnt;
-
+	cout << ans << "\n";
 	return;
 }
 
@@ -38,7 +47,7 @@ int32_t main(){
 	cin.tie(0); cout.tie(0);
 
 	int tc = 1;
-	// cin >> tc;
+	cin >> tc;
 	for(int i = 1; i <= tc; i++){
 		// cout << "Case #" << i << ": ";
 		solve();
