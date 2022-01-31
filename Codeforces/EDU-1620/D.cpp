@@ -1,4 +1,5 @@
 /* Author: hyturing - Hemant Kumar Yadav */
+// Read the problem statement carefully and clearly.
 #include "bits/stdc++.h"
 using namespace std; 
 
@@ -11,13 +12,22 @@ void solve(){
 	
 	int n;
 	cin >> n;
-	
-	double pi = acos(-1);
-	pi /= (2*n);
+	ll a(n);
+	set<ll> rem;
+	for(auto &x: a) cin >> x;
 
-	double ans = 1/tan(pi);
+	for(int i = 0; i < n; i++) rem.insert(a[i]%3);
 
-	cout << fixed << setprecision(9) << ans << "\n";	
+	int cnt;
+	for(auto it: rem){
+		if(it == 1 | it == 2) cnt++;
+	}
+
+	ll coin;
+	if(cnt == 2){
+		coin = max({a})/3;
+
+	}
 
 	return;
 }

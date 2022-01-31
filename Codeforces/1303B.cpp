@@ -1,4 +1,5 @@
 /* Author: hyturing - Hemant Kumar Yadav */
+// Read the problem statement carefully and clearly.
 #include "bits/stdc++.h"
 using namespace std; 
 
@@ -9,15 +10,21 @@ void solve(){
 
 	// code here
 	
-	int n;
-	cin >> n;
-	
-	double pi = acos(-1);
-	pi /= (2*n);
+	ll n, g, b;
+	cin >> n >> g >> b;
 
-	double ans = 1/tan(pi);
+	ll min_g = n/2+n%2;
 
-	cout << fixed << setprecision(9) << ans << "\n";	
+	bool rem = min_g%g;
+	ll need = min_g/g + rem ,need_b = n/2;
+
+	if((need-1)*b >= need_b){
+		ll ans = (need-1)*(g+b) + min_g - (need-1)*g;
+		cout << ans << "\n";
+	}
+	else{
+		cout << n << "\n";
+	}
 
 	return;
 }

@@ -3,22 +3,14 @@
 using namespace std; 
 
 #define ll long long
-const ll  MOD = 1e9+7;
+const ll  M = 1e9+7;
+const ll MM = 998244353;
+const int N = 1e5+5;
 
 void solve(){
 
 	// code here
 	
-	int n;
-	cin >> n;
-	
-	double pi = acos(-1);
-	pi /= (2*n);
-
-	double ans = 1/tan(pi);
-
-	cout << fixed << setprecision(9) << ans << "\n";	
-
 	return;
 }
 

@@ -1,4 +1,5 @@
 /* Author: hyturing - Hemant Kumar Yadav */
+// Read the problem statement carefully and clearly.
 #include "bits/stdc++.h"
 using namespace std; 
 
@@ -11,13 +12,22 @@ void solve(){
 	
 	int n;
 	cin >> n;
-	
-	double pi = acos(-1);
-	pi /= (2*n);
+	vector<pair<ll,ll>> a(n);
+	for(auto &x: a){
+		cin >> x.second;
+		ll num = x.second;
+		ll cnt = 0;
+		
+		while(num % 3 == 0){
+			cnt++;
+			num /= 3;
+		}
 
-	double ans = 1/tan(pi);
+		x.first = -cnt;
+	}
 
-	cout << fixed << setprecision(9) << ans << "\n";	
+	sort(a.begin(), a.end());
+	for(auto &x: a) cout << x.second << " ";
 
 	return;
 }
@@ -27,7 +37,7 @@ int32_t main(){
 	cin.tie(0); cout.tie(0);
 
 	int tc = 1;
-	cin >> tc;
+	// cin >> tc;
 	for(int i = 1; i <= tc; i++){
 		// cout << "Case #" << i << ": ";
 		solve();

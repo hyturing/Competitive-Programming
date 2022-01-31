@@ -1,4 +1,5 @@
 /* Author: hyturing - Hemant Kumar Yadav */
+// Read the problem statement carefully and clearly.
 #include "bits/stdc++.h"
 using namespace std; 
 
@@ -9,15 +10,17 @@ void solve(){
 
 	// code here
 	
-	int n;
-	cin >> n;
-	
-	double pi = acos(-1);
-	pi /= (2*n);
+	string s;
+	cin >> s;
 
-	double ans = 1/tan(pi);
+	if(s.size() < 3){cout << "YES\n"; return;}
 
-	cout << fixed << setprecision(9) << ans << "\n";	
+	for(int i = 2; i < s.size(); i++){
+		int a = s[i-2]-'A'%26, b = s[i-1]-'A', c = s[i]-'A';
+		if((a+b)%26 != c){cout << "NO\n"; return;}
+	}
+
+	cout << "YES\n";
 
 	return;
 }
@@ -27,7 +30,7 @@ int32_t main(){
 	cin.tie(0); cout.tie(0);
 
 	int tc = 1;
-	cin >> tc;
+	// cin >> tc;
 	for(int i = 1; i <= tc; i++){
 		// cout << "Case #" << i << ": ";
 		solve();

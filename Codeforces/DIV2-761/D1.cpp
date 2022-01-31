@@ -1,4 +1,5 @@
 /* Author: hyturing - Hemant Kumar Yadav */
+// Read the problem statement carefully and clearly.
 #include "bits/stdc++.h"
 using namespace std; 
 
@@ -9,15 +10,7 @@ void solve(){
 
 	// code here
 	
-	int n;
-	cin >> n;
-	
-	double pi = acos(-1);
-	pi /= (2*n);
-
-	double ans = 1/tan(pi);
-
-	cout << fixed << setprecision(9) << ans << "\n";	
+		
 
 	return;
 }

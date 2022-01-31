@@ -2,9 +2,10 @@
 #include "bits/stdc++.h"
 using namespace std; 
 
-#define endl "\n"
 #define ll long long
-const ll  MOD = 1e9+7;
+const ll  M = 1e9+7;
+const ll MM = 998244353;
+const int N = 1e5+5;
 
 void solve(){
 
