@@ -11,7 +11,28 @@ void solve(){
 
 	// code here
 	
-	
+	int a, b;
+	cin >> a >> b;
+
+	int ans = b-a;
+
+	for(int i = a; i <= b; i++){
+		bitset<21> b1(0), a1(i), bb(b);
+
+		for(int j = 20; j >= 0; j--){
+			if(a1[j] == 1 & bb[j] == 0){
+				b1[j] = 1;
+				break;
+			}
+			else b1[j] = a1[j]|bb[j];
+		}
+
+		int b11 = b1.to_ulong();
+
+		ans = min(ans, i-a-b+(i|b11)+1);
+	}
+
+	cout << ans << "\n";
 
 	return;
 }

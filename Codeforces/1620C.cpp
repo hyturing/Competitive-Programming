@@ -12,19 +12,9 @@ void solve(){
 	// code here
 	
 	
-		
+			
 	return;
 }
-
-/* 
-	-> Read the problem statement carefully and clearly.
-
-	-> Think Brute Force first.
-	
-	-> While practice if WA think first don't see test cases.
-	
-	-> If code too long logic maybe incorrect. 
-*/
 
 int32_t main(){
 	ios_base::sync_with_stdio(0);

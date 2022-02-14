@@ -11,25 +11,34 @@ void solve(){
 
 	// code here
 	
+	int n, d;
+	cin >> n >> d;
+
+	for(int i = 1; i <= d; i++){
+		int x, y;
+		cin >> x >> y;
+		if(x <= i | y <= i) cout << i << "\n";
+		else{
+			int bond = i-1, man = i;
+
+			while(man > bond){
+				man -= 2;
+				bond--;
+			}
+
+			cout << bond+1 << "\n";
+		}
+	}
+
 	return;
 }
-
-/* 
-	-> Read the problem statement carefully and clearly.
-
-	-> Think Brute Force first.
-	
-	-> While practice if WA think first don't see test cases.
-	
-	-> If code too long logic maybe incorrect. 
-*/
 
 int32_t main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0); cout.tie(0);
 
 	int tc = 1;
-	cin >> tc;
+	// cin >> tc;
 	for(int i = 1; i <= tc; i++){
 		// cout << "Case #" << i << ": ";
 		solve();
