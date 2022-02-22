@@ -1,19 +1,18 @@
-/* hyturing - Hemant Kumar Yadav */
+/* Author: hyturing - Hemant Kumar Yadav */
 #include "bits/stdc++.h"
 using namespace std; 
 
-#define endl "\n"
 #define ll long long
-const ll  MOD = 1e9+7;
-	
-void solve(){
-	int n, m;
-	cin >> n >> m;
-	string s;
-	cin >> s;
+const ll  M = 1e9+7;
+const ll MM = 998244353;
+const int N = 1e5+5;
 
+void solve(){
+
+	// code here
 	
 	
+		
 	return;
 }
 
