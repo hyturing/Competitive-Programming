@@ -1,15 +1,14 @@
 /**
- *        Author: hyturing
- *        Created: 
- *        Description: 
+ *    Author: hyturing
+ *    Created: 
 **/
 
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std; 
 
-#define ll long long
-const ll  M = 1e9+7;
-const ll MM = 998244353;
+#define int long long
+const int  M = 1e9+7;
+const int MM = 998244353;
 const int N = 1e5+5;
 
 void solve(){

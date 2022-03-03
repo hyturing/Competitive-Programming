@@ -1,5 +1,10 @@
-/* Author: hyturing - Hemant Kumar Yadav */
-#include "bits/stdc++.h"
+/**
+ *	Author: hyturing
+ *	Created: 26 Feb 2022 07:40:20 IST
+ *	Description: 
+**/
+
+#include <bits/stdc++.h>
 using namespace std; 
 
 #define ll long long
@@ -11,7 +16,26 @@ void solve(){
 
 	// code here
 	
-		
+	int n;
+	cin >> n;
+
+	long long d[n];
+	for(auto &x: d) cin >> x;
+
+	int rem = n-2;
+	long long ans = 0;
+
+	sort(d, d+n);
+
+	for(int i = 0; i < n-1; i++){
+		ans += (d[i]*(n-i-1)); 
+	}
+
+	for(int i = n-1; i > 0; i--){
+		ans -= (d[i]*(long long)i);
+	}
+
+	cout << ans+d[n-1] << "\n";
 
 	return;
 }
