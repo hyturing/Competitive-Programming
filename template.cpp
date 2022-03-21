@@ -7,9 +7,10 @@
 using namespace std; 
 
 #define int long long
-const int  M = 1e9+7;
+const int  MOD = 1e9+7;
 const int MM = 998244353;
 const int N = 1e5+5;
+const int INF = 1e18
 
 void solve(){
 
