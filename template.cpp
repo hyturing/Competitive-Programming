@@ -12,7 +12,7 @@ const int MM = 998244353;
 const int N = 1e5+5;
 const int INF = 1e18;
 
-void solve(){
+void solve() {
 
     // code here
     
@@ -21,13 +21,14 @@ void solve(){
     return;
 }
 
-int32_t main(){
+int32_t main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
     int tc = 1;
     cin >> tc;
-    for(int i = 1; i <= tc; i++){
+    
+    for (int i = 1; i <= tc; i++) {
         // cout << "Case #" << i << ": ";
         solve();
     }
