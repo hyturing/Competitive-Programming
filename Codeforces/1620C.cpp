@@ -11,7 +11,7 @@ void solve(){
 
 	// code here
 	
-	
+		
 			
 	return;
 }
