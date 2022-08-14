@@ -17,7 +17,22 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+	vector<int> a(n);
+	for (auto &x: a) cin >> x;
+
+	int m; cin >> m;
+	vector<int> b(m);
+	for (auto &x: b) cin >> x;
+
+	int i = 0;
+	int ans = 0;
+	for (int j = 0; j < n; j++) {
+		
+	}
+	while (i < n) {
+
+	}     
 
     return;
 }
@@ -30,7 +45,7 @@ int32_t main() {
     cin >> tc;
     
     for (int i = 1; i <= tc; i++) {
-        // cout << "Case #" << i << ": ";
+        cout << "Case #" << i << ": ";
         solve();
     }
 

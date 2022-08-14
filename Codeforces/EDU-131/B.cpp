@@ -17,7 +17,31 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    vector<bool> ok(n+1, false);
+
+    int k = 1, d = 2;
+
+    vector<int> ans;
+   
+    while (k <= n) {
+    	if (ok[k]) {
+            k++;
+            continue;
+        }
+        int r = k;
+
+        while (r <= n) {
+            ans.push_back(r);
+            ok[r] = true;
+            r *= 2;
+        }
+        k++;
+    }
+
+    cout << d << "\n";
+
+    for (auto x: ans) cout << x << " "; cout << "\n";
 
     return;
 }

@@ -17,7 +17,7 @@ void solve() {
 
     // code here
     
-    
+	
 
     return;
 }
@@ -27,7 +27,7 @@ int32_t main() {
     cin.tie(nullptr);
 
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     
     for (int i = 1; i <= tc; i++) {
         // cout << "Case #" << i << ": ";

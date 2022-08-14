@@ -17,7 +17,38 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+	vector<int> a(n+1), pos(n+1);
+	for (int i = 1; i <= n; i++) cin >> a[i];
+
+	for (int i = 1; i <= n; i++) {
+		pos[a[i]] = i;
+	}    
+
+	vector<int> g;
+
+	for (int i = 1; i <= n; i++) {
+		if (a[i] == i) continue;
+
+		g.push_back(abs(i-pos[i]));
+
+		int next = a[i];
+		swap(a[i], a[pos[i]]);
+
+		pos[a[i]] = a[i];
+	}
+
+	int ans;
+
+	for (int i = 0; i < sz(g); i++) {
+		if (i == 0) {
+			ans = g[i];
+			continue;
+		}
+		ans = __gcd(ans, g[i]);
+	}
+
+	cout << ans << "\n";
 
     return;
 }

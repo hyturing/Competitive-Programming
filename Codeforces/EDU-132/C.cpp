@@ -6,7 +6,11 @@
 #include <bits/stdc++.h>
 using namespace std; 
 
+#define int long long
 #define sz(x) ((int)(x).size())
+#define all(x) x.begin(),x.end()
+#define endl "\n"
+#define pb push_back
 
 const int  MOD = 1e9+7;
 const int MM = 998244353;
@@ -36,4 +40,6 @@ int32_t main() {
 
     return 0;
 }
+
+/*-------------------------------------------------------------------------------------------------------*/
 

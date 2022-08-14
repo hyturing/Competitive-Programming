@@ -17,7 +17,27 @@ void solve() {
 
     // code here
     
-    
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+
+   int cnt = 0;
+
+   if (a) cnt++;
+   if (b) cnt++;
+   if (c) cnt++;
+   if (d) cnt++;
+
+   if (cnt == 0) {
+   		cout << 0 << "\n";
+   		return;
+   }
+
+   if (cnt == 4) {
+        cout << 2 << "\n";
+        return;
+   }
+
+   cout << 1 << "\n";
 
     return;
 }

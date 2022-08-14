@@ -17,7 +17,23 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    string s; cin >> s;
+
+    int cnt = 0;
+
+    // if (is_sorted(s.begin(), s.end())) {
+    //     cout << 0 << "\n";
+    //     return;
+    // }
+
+
+	for (int i = n-1; i >= 0; i--) {
+		if (s[i] == '0') cnt++;
+		while(s[i] == '0') i--;
+	}
+
+	cout << (s[0] == '0' ? cnt-1 : cnt) << "\n";
 
     return;
 }

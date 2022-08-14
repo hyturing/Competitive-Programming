@@ -17,7 +17,34 @@ void solve() {
 
     // code here
     
-    
+	string s; cin >> s;
+
+	int n = sz(s);
+
+	string curr = "";
+
+	set<char> ok;
+
+	for (int i = 0; i < n; i++) {
+		if (ok.find(s[i]) == ok.end()) {
+			curr.push_back(s[i]);
+			ok.insert(s[i]);
+			if (ok.size() == 3) {
+				while (ok.find(s[i]) != ok.end()) i++;
+				ok.clear();
+				i--;
+			}
+		}
+	}
+
+	int len = curr.size();
+
+	if (len%3 == 0) {
+		cout << len/3 << "\n";
+	}
+	else {
+		cout << len/3+1 << "\n";
+	}
 
     return;
 }

@@ -17,7 +17,33 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+	string s; cin >> s;
+
+	string t = s;
+	while (true) {
+		if (n == 0) {
+			break;
+		}
+		if (n&1) {
+			t = t.substr(0, n-1);
+			n--; 
+		}
+		else {
+			string a = t.substr(0, n/2);
+			string b = t.substr(n/2, n/2);
+
+			if (a != b) {
+				cout << "NO\n";
+				return;
+			}
+
+			t = a;
+			n /= 2;
+		}
+	}
+
+	cout << "YES\n";
 
     return;
 }

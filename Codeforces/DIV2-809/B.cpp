@@ -17,7 +17,33 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    int a[n];
+    for (auto &x: a) cin >> x;
+
+    map<int,vector<int>> m;
+
+	for (int i = 0; i < n; i++) {
+		m[a[i]].push_back(i);
+	}
+
+	int ans[n+1] = {0};
+
+	for (int i = 1; i <= n; i++) {
+		if (m.find(i) != m.end()) {
+			int cnt = 1;
+			vector<int> b = m[i];
+			ans[i] = 1;
+			for (int j = 1; j < sz(b); j++) {
+				if ((b[j]-b[j-1])%2 == 1) {
+					cnt++;
+					ans[i] = max(ans[i],cnt);
+				}
+			}
+		}
+	}
+
+	for (int i = 1; i <= n; i++) cout << ans[i] << " "; cout << "\n";
 
     return;
 }

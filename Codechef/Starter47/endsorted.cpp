@@ -17,7 +17,23 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+	vector<int> a(n+1);
+	for (int i = 1; i <= n; i++) cin >> a[i];
+
+	int x, y;
+
+	for (int i = 1; i <= n; i++) {
+		if (a[i] == 1) x = i;
+		if (a[i] == n) y = i;
+	}    
+
+	if (y < x) {
+		cout << x-1+n-y-1 << "\n";
+	}
+	else {
+		cout << x-1+n-y << "\n";
+	}
 
     return;
 }

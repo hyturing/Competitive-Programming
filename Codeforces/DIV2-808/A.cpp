@@ -17,7 +17,27 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++) cin >> a[i];
+
+    bool ok = true;
+
+    for (int i = 0; i < n; i++) {
+        if (i == 0) {
+            if (a[i] == 1) {
+                break;
+            }
+            continue;
+        }
+
+        if (a[i]%a[0] != 0) {
+            ok = false;
+            break;
+        }
+    }
+
+    cout << (ok ? "YES\n" : "NO\n");
 
     return;
 }

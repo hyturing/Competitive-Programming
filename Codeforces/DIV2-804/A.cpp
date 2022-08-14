@@ -12,12 +12,21 @@ const int  MOD = 1e9+7;
 const int MM = 998244353;
 const int N = 1e5+5;
 const long long INF = 1e18;
+#define int long long
 
 void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+
+    if (n&1) {
+    	cout << -1 << "\n";
+    	return;
+    }
+    else {
+    	cout << n/2 << " " << n/2 << " " << 0 << "\n";
+    }
 
     return;
 }

@@ -6,7 +6,11 @@
 #include <bits/stdc++.h>
 using namespace std; 
 
+#define int long long
 #define sz(x) ((int)(x).size())
+#define all(x) x.begin(),x.end()
+#define endl "\n"
+#define pb push_back
 
 const int  MOD = 1e9+7;
 const int MM = 998244353;
@@ -17,7 +21,20 @@ void solve() {
 
     // code here
     
-    
+	string s; cin >> s;
+
+	map<char,int> m;
+
+	for (auto x: s) m[x]++;
+
+	for (auto x: m) {
+		if (x.second == 1) {
+			cout << x.first << endl;
+			return;
+		}
+	}
+
+	cout << -1 << endl;
 
     return;
 }
@@ -27,7 +44,7 @@ int32_t main() {
     cin.tie(nullptr);
 
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     
     for (int i = 1; i <= tc; i++) {
         // cout << "Case #" << i << ": ";
@@ -36,4 +53,6 @@ int32_t main() {
 
     return 0;
 }
+
+/*-------------------------------------------------------------------------------------------------------*/
 

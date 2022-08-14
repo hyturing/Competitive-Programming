@@ -17,7 +17,36 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+
+	if (n == 3) {
+		cout << -1 << "\n";
+		return;
+	}
+
+	vector<int> a(n+1);
+	for (int i = 1; i <= n; i++) a[i] = i;
+
+	for (int i = 3; i <= n; i++) {
+		if (i == n) {
+			if (a[i] == (a[i-1]^a[i-2])) swap(a[i], a[i-4]);
+			continue;
+		}
+		if (a[i] == (a[i-1]^a[i-2])) swap(a[i], a[i+1]);
+	}    
+
+	for (int i = 3; i <= n; i++) {
+		if (a[i] == (a[i-1]^a[i-2])) {
+			cout << -1 << "\n";
+			return;
+		}
+	}
+
+	for (int i = 1; i <= n; i++) {
+		cout << a[i] << " ";
+	}
+
+	cout << "\n";
 
     return;
 }

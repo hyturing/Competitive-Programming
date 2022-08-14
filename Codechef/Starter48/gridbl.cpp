@@ -17,7 +17,11 @@ void solve() {
 
     // code here
     
-    
+    int n, m; cin >> n >> m;
+
+    int a = n/2, b = m/2;
+
+    cout << n*m - a*b*4 << "\n";
 
     return;
 }

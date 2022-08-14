@@ -17,7 +17,36 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+
+	int a[n];
+	for (auto &x: a) cin >> x;
+
+	map<int,int> mpp;
+
+	for (auto x: a) mpp[x]++;
+
+	int cnt = 0;
+
+	for (auto x: mpp) {
+		if (x.second == 1) cnt++;
+	}    
+
+	int mx = 0;
+	for (auto x: a) mx = max(mx, x);
+
+	if (mpp[mx] == 1 and cnt == 1) {	
+		for (auto x: mpp) {
+			if (x.second > 2) {
+				cout << 1 << "\n";
+				return;
+			}
+		}
+		cout << 2 << "\n";
+		return;
+	}
+
+	cout << (cnt+1)/2 << "\n";
 
     return;
 }

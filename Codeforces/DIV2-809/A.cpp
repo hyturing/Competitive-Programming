@@ -17,7 +17,27 @@ void solve() {
 
     // code here
     
-    
+   	int n, m; cin >> n >> m;
+   	int a[n+1];
+   	for (int i = 1; i <= n; i++) cin >> a[i];
+
+   	string s;
+
+   	for (int i = 0; i < m; i++) s.push_back('B');
+
+   	for (int i = 1; i <= n; i++) {
+   		int x = a[i];
+   		int y = m+1-a[i];
+
+   		if (s[min(x,y)-1] == 'B') {
+   			s[min(x,y)-1] = 'A';
+   		}
+   		else {
+   			s[max(x,y)-1] = 'A';
+   		}
+   	}
+
+   	cout << s << "\n";
 
     return;
 }

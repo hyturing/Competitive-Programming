@@ -17,7 +17,32 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+	string s; cin >> s;
+
+    set<int> ok = {'a', 'e', 'i', 'o', 'u'};
+
+	int a[n] = {0};
+
+    for (int i = n-2; i >= 0; i--) {
+        if (ok.find(s[i+1]) != ok.end()) {
+            a[i] = (a[i+1]+1);
+        }
+        else {
+            a[i] = a[i+1];
+        }
+    }
+
+    string rev = "", n_rev = "";
+
+    for (int i = 0; i < n; i++) {
+        if (a[i]&1) rev += s[i];
+        else n_rev += s[i];
+    }
+
+    reverse(rev.begin(), rev.end());
+
+    cout << rev << n_rev << "\n";
 
     return;
 }

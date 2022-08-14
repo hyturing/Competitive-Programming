@@ -17,7 +17,34 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+	string s; cin >> s;
+
+	string a, b;
+
+	bool ok = true;
+
+	for (int i = 0; i < n; i++) {
+		if (ok) {
+			a.push_back(s[i]);
+			ok = false;
+		}
+		else {
+			b.push_back(s[i]);
+			ok = true;
+		}
+	}    
+
+	sort(a.begin(), a.end());
+	sort(b.begin(), b.end());
+
+	if (a == b) {
+		cout << "YES\n";
+		return;
+	}
+	else {
+		cout << "NO\n";
+	}
 
     return;
 }

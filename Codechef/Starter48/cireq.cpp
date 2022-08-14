@@ -17,7 +17,31 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n; 
+    int a[n]; for (auto &x: a) cin >> x;
+
+   	sort(a, a+n);
+
+   	int cur = 1, ans = 1;
+
+    priority_queue<int, vector<int>, greater<int>> pq;
+
+    pq.push(1);
+
+   	for (int i = 0; i < n; i++) {
+   		if (a[i] >= pq.top()) {
+   			int curr = pq.top();
+            pq.pop();
+            curr++;
+            pq.push(curr);
+   		}
+   		else {
+   			pq.push(1);
+            i--;
+   		}
+   	}
+
+   	cout << pq.size() << "\n";
 
     return;
 }

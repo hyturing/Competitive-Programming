@@ -17,7 +17,28 @@ void solve() {
 
     // code here
     
-    
+    int x; cin >> x;
+
+    int arr[4];
+    for (int i = 1; i < 4; i++) cin >> arr[i];
+
+    bool ok[4] = {0};
+
+	while (true) {
+		ok[x] = 1;
+		x = arr[x];
+
+		if (x == 0) break;
+	}
+
+	for (int i = 1; i < 4; i++) {
+		if (!ok[i]) {
+			cout << "NO\n";
+			return;
+		}
+	}
+
+	cout << "YES\n";
 
     return;
 }

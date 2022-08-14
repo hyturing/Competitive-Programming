@@ -6,7 +6,11 @@
 #include <bits/stdc++.h>
 using namespace std; 
 
+#define int long long
 #define sz(x) ((int)(x).size())
+#define all(x) x.begin(),x.end()
+#define endl "\n"
+#define pb push_back
 
 const int  MOD = 1e9+7;
 const int MM = 998244353;
@@ -17,7 +21,22 @@ void solve() {
 
     // code here
     
-    
+    int n, H, M; cin >> n >> H >> M;
+    int ans = 1440;
+
+    for (int i = 0; i < n; i++) {
+        int h, m; cin >> h >> m;
+
+        int x = h*60+m;
+
+        int res = x-H*60-M;
+
+        if (res < 0) res += 1440;
+
+        ans = min(ans, res);
+    }
+
+    cout << ans/60 << " " << ans%60 << endl;
 
     return;
 }
@@ -37,3 +56,4 @@ int32_t main() {
     return 0;
 }
 
+/*-------------------------------------------------------------------------------------------------------*/

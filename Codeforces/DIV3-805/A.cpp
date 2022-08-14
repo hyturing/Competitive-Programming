@@ -17,7 +17,24 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+
+	int k = 1; 
+
+    int t = n;
+
+    while (t%10 == 0) t /= 10;
+
+    if (t == 1) {
+        cout << 0 << "\n";
+        return;
+    }
+
+	while (k*10 < n) {
+		k *= 10;
+	}    
+
+	cout << n-k << "\n";
 
     return;
 }

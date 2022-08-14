@@ -17,7 +17,40 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+	string a, b; cin >> a >> b;
+
+	if (a == b) {
+		cout << "YES\n";
+		return;
+	}
+
+	int cnt = 0;
+
+	for (auto x: a) {
+		cnt += (x-'0');
+	}
+
+	if (cnt == 0) {
+		cout << "NO\n";
+		return;
+	}
+
+	bool ok = false;
+
+	for (int i = 0; i < n-1; i++) {
+		if (b[i] == b[i+1]) {
+			ok = true;
+			break;
+		}
+	}
+
+	if (ok) {
+		cout << "YES\n";
+	}
+	else {
+		cout << "NO\n";
+	}
 
     return;
 }

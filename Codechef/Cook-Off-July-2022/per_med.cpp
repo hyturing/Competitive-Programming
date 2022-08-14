@@ -17,7 +17,21 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n;
+	
+	int a = 1, b = n;
+
+	while (a <= n/2) {
+		cout << b << " " << a << " ";
+		a++, b--;
+	}
+
+	if (n&1) {
+		cout << (n+1)/2;
+	}
+
+	cout << "\n";
+
 
     return;
 }
