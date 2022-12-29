@@ -21,7 +21,37 @@ void solve() {
 
     // code here
     
-    
+    int n, m, k; cin >> n >> m >> k;
+
+    vector<int> v(k);
+    for (auto &x: v) cin >> x;
+
+    int rem = n*m-3;
+
+	int cur = k;
+    set<int> s;
+	int ocu = 0;
+
+	for (auto x: v) {
+		while (s.find(cur) != s.end()) {
+            s.erase(cur);
+            cur--;
+        }
+
+        if (cur == x) {
+            cur--;
+        }
+        else {
+            s.insert(x);
+        }
+
+        if (s.size() >= rem) {
+            cout << "TIDAK" << endl;
+            return;
+        }
+	}
+
+	cout << "YA" << endl;
 
     return;
 }

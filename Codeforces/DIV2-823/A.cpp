@@ -21,7 +21,27 @@ void solve() {
 
     // code here
     
-    
+    int n, c; cin >> n >> c;
+
+    int arr[n];
+    for (auto &x: arr) cin >> x;
+
+    map<int,int> m;
+
+    for (auto x: arr) m[x]++;
+
+	int ans = 0;
+
+	for (auto x: m) {
+		if (x.second > c) {
+			ans += c;
+		}
+		else {
+			ans += x.second;
+		}
+	}
+
+	cout << ans << endl;
 
     return;
 }

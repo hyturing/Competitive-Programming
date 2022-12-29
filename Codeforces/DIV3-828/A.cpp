@@ -21,7 +21,27 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+
+    vector<int> a(n);
+
+    for (auto &x: a) cin >> x;
+
+    string s; cin >> s;
+
+	bool ok = true;
+
+	for (int i = 0; i < n; i++) {
+		int m = a[i];
+		char k = s[i];
+
+		for (int j = 0; j < n; j++) {
+			if (a[j] == m and s[j] != k) ok = false;
+		}
+	}
+
+	if (ok) cout << "YES\n";
+	else cout << "NO\n";
 
     return;
 }

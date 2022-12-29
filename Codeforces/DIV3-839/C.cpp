@@ -21,7 +21,43 @@ void solve() {
 
     // code here
     
+    int k, n;
+    cin >> k >> n;
+
+    vector<int> arr;
+
+    for (int i = 0; i <= n; i++) {
+        arr.push_back(i);
+    }
+
+    int rem = n;
+    int f = n-1;
+    int cnt = 1;
+    while (rem-cnt >= k and f > 0) {
+        int r = cnt;
+
+        while(r > 0 and f > 0) {
+            arr[f] = -1;
+            f--;
+            r--;
+        }
+
+        f--;
+        rem -= cnt;
+        cnt++;
+    }
+
+    vector<int> ans;
+    for (int i = 1; i <= n; i++) {
+        if (arr[i] > 0) ans.push_back(arr[i]);
+    }
+
     
+    while (ans.size() > k) {
+        ans.erase(ans.begin());
+    }
+
+    for (auto x: ans) cout << x << " "; cout << endl;
 
     return;
 }

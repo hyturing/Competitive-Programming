@@ -21,8 +21,18 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    vector<int> a(n);
 
+    for (auto &x: a) cin >> x;
+
+    int cnt = 0;
+
+	for (auto x: a) if (x == 1) cnt++;
+
+	if (cnt == n and n != 1) cout << n-1 << endl;
+    else cout << cnt << endl;
+    
     return;
 }
 

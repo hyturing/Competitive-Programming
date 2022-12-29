@@ -21,8 +21,17 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
 
+    for (int i = 0; i < n; i++) {
+    	int t; cin >> t;
+    }
+
+    int k = 10-n;
+
+    int ans = ((k*k-k)/2)*6;
+
+    cout << ans << endl;
     return;
 }
 

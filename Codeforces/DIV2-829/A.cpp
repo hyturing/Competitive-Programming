@@ -21,7 +21,21 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    string s; cin >> s;
+
+    int c = 0;
+
+    for (auto x: s) {
+    	if (x == 'Q') c++;
+    	else {
+            c--;
+            if (c < 0) c = 0;
+        }
+    }
+
+    if (c > 0) cout << "No" << endl;
+    else cout << "Yes" << endl;
 
     return;
 }

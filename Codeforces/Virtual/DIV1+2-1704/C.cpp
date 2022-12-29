@@ -21,7 +21,34 @@ void solve() {
 
     // code here
     
-    
+    int n, m; cin >> n >> m;
+    vector<int> a(m);
+
+    for (auto &x: a) cin >> x;
+
+    sort(all(a));
+
+    vector<int> v;
+
+    for (int i = 0; i < m; i++) {
+        int k = a[(i+1)%m] - a[i];
+        if (k <= 0) k += n;
+        v.pb(k-1);
+    }
+
+    sort(v.rbegin(), v.rend());
+
+    int ans = 0;
+
+    for (int i = 0; i < sz(v); i++) {
+       int num = v[i] - 4*i;
+
+       if (num >= 1) {
+            ans += max(1LL, num-1LL);
+       }
+    }
+
+    cout << n-ans << endl;
 
     return;
 }

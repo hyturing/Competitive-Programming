@@ -21,7 +21,29 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    vector<int> a(n), b(n);
+
+    for (auto &x: a) cin >> x;
+    for (auto &x: b) cin >> x;
+
+    int sum = 0;
+	int mx = 0;
+    for (int i = 0; i < n; i++) {
+    	sum += a[i];
+    	mx = max(mx, b[i]);
+    }
+
+    for (auto x: b) {
+        if (x == mx) {
+            mx = -1;
+            continue;
+        }
+
+        sum += x;
+    }
+
+    cout << sum << endl;
 
     return;
 }

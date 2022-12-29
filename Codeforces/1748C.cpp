@@ -21,7 +21,33 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    vector<int> a(n);
+
+    for (auto &x: a) cin >> x;
+
+    vector<int> v(n);
+	
+	int cnt = 0;
+
+	for (int i = 0; i < n; i++) {
+		if (i == 0) v[i] = a[i];
+		else {
+			v[i] = v[i-1]+a[i];
+
+			if (v[i] != 0 and a[i] == 0) {
+				a[i] = -v[i];
+				v[i] = 0;
+			}
+		}
+
+		if (v[i] == 0) {
+			// cout << i << " ";
+			cnt++;
+		}
+	}	
+
+	cout << cnt << endl;
 
     return;
 }

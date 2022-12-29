@@ -21,7 +21,24 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+
+    int x = 3;
+
+    for (int i = 1; i <= n; i++) {
+    	if (i >= 3) {
+    		for (int j = 0; j < i; j++) {
+    			if (j == 0) cout << 1 << " ";
+    			else if (j == i-1) cout << 1 << " ";
+    			else cout << 0 << " ";
+    		}
+    	}
+    	else {
+    		for (int j = 0; j < i; j++) cout << 1 << " ";
+    	}
+
+        cout << endl;
+    }
 
     return;
 }

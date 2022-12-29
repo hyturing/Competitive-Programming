@@ -21,7 +21,25 @@ void solve() {
 
     // code here
     
-    
+    int a, b; cin >> a >> b;
+
+    int val = __gcd(a,b);
+
+    if (val == 1 and b > 1) {
+        cout << "NO\n";
+        return;
+    }
+
+    while (__gcd(b,val) > 1) {
+        b /= __gcd(b,val);
+    }
+
+    if (b == 1) {
+        cout << "YES\n";
+    }
+    else {
+        cout << "NO\n";
+    }
 
     return;
 }

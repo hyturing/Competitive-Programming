@@ -21,7 +21,12 @@ void solve() {
 
     // code here
     
-    
+    char a, b, c;
+    cin >> a >> b >> c;
+
+    int x = (a-'0')+(c-'0');
+
+    cout << x << endl;
 
     return;
 }

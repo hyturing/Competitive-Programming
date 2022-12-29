@@ -21,7 +21,44 @@ void solve() {
 
     // code here
     
-    
+    string s; cin >> s;
+
+    int n = s.size();
+
+    stack<char> st;
+
+    string ans = "";
+
+    for (int i = 0; i < n; i++) {
+    	while (true) {
+    		if (st.empty()) break;
+
+    		if (st.top() > s[i]) {
+    			if (st.top() == '9') ans.push_back('9');
+    			else {
+    				char k = st.top(); k++;
+    				ans.push_back(k);
+    			}
+
+    			st.pop();
+    		}
+    		else {
+    			break;
+    		}
+    	}
+
+    	st.push(s[i]);
+    }
+
+    while (true) {
+    	if (st.empty()) break;
+    	ans.push_back(st.top());
+    	st.pop();
+    }
+
+    sort(ans.begin(), ans.end());
+
+    cout << ans << endl;
 
     return;
 }

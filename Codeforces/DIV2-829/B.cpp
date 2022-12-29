@@ -21,7 +21,36 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+
+    int mi = n/2;
+
+    // if (mi == 1) {
+    //     for (int i = 1; i <= n; i++) cout << i << " "; cout << endl;
+    //     return;
+    // }
+
+    vector<vector<int>> v;
+
+
+    for (int i = 1; i < 1+mi; i++) {
+    	vector<int> a;
+    	int k = i;
+
+    	while (k <= n) {
+    		a.push_back(k);
+    		k += mi;
+    	}
+
+    	v.push_back(a);
+    	a.clear();
+    }
+
+    for (int i = v.size()-1; i >= 0; i--) {
+        for (auto x: v[i]) cout << x << " ";
+    }
+
+    cout << endl;
 
     return;
 }

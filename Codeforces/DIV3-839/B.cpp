@@ -17,11 +17,38 @@ const int MM = 998244353;
 const int N = 1e5+5;
 const long long INF = 1e18;
 
+vector<vector<int>> rotate(vector<vector<int>> a) {
+	int x = a[0][0];
+
+	a[0][0] = a[1][0];
+	a[1][0] = a[1][1];
+	a[1][1] = a[0][1];
+	a[0][1] = x;
+
+	return a;
+}
+
 void solve() {
 
     // code here
     
-    
+    vector<vector<int>> a(2, vector<int>(2));
+
+    for (int i = 0; i < 2; i++) {
+    	for (int j = 0; j < 2; j++) {
+    		cin >> a[i][j];
+    	}
+    }
+
+    for (int i = 0; i < 5; i++) {
+    	a = rotate(a);
+    	if (a[0][0] < a[0][1] and a[0][0] < a[1][0] and a[0][1] < a[1][1] and a[1][0] < a[1][1]) {
+    		cout << "YES\n";
+    		return;
+    	}
+    }
+
+    cout << "NO\n";
 
     return;
 }

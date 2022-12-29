@@ -21,7 +21,32 @@ void solve() {
 
     // code here
     
+    int n; cin >> n;
+
+    vector<int> a(n);
+    for (auto &x: a) cin >> x;
+
+    if (n <= 2) {
+    	cout << "YES\n";
+    	return;
+    }
     
+    if (a[0] == a[n-1] or a[1] == a[n-1] or a[0] == a[n-2]) {
+    	cout << "YES\n";
+    	return;
+    }
+
+    
+    for (int i = 1; i < n-1; i++) {
+        if (a[i] == a[0] and a[i+1] == a[n-1]) {
+            cout << "YES\n";
+            return;
+        }
+    }
+
+
+   	cout << "NO\n";
+
 
     return;
 }

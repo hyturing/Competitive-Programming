@@ -21,7 +21,31 @@ void solve() {
 
     // code here
     
-    
+	int n; cin >> n; 
+	string s; cin >> s;
+
+	vector<bool> ok(n+1, false);
+
+	for (int i = 0; i < n; i++) {
+		if (s[i] == '1') ok[i+1] = true;
+	}
+
+	vector<int> cost(n+1, 0);
+
+	for (int i = n; i >= 1; i--) {
+		for (int j = i; j <= n; j += i) {
+			if (ok[j]) break;
+			cost[j] = i;
+		}
+	}
+
+	int count = 0;
+
+	for (int i = 1; i <= n; i++) {
+		if (ok[i] == false) count += cost[i];
+	}
+
+	cout << count << endl;
 
     return;
 }

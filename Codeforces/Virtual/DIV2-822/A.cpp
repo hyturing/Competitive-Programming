@@ -21,7 +21,21 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+
+    vector<int> arr(n);
+
+    for (auto &x: arr) cin >> x;
+
+    sort(all(arr));
+
+	int mi = INT_MAX;
+
+	for (int i = 2; i < n; i++) {
+		mi = min(mi, arr[i]-arr[i-2]);
+	}
+
+	cout << mi << endl;
 
     return;
 }

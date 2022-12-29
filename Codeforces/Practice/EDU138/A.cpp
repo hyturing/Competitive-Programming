@@ -21,7 +21,19 @@ void solve() {
 
     // code here
     
-    
+    int n, m; cin >> n >> m;
+
+    map<int,int> a, b;
+    vector<pair<int,int>> v;
+    for (int i = 0; i < m; i++) {
+    	int x, y; cin >> x >> y;
+    	v.push_back({x,y});
+    	a[x]++;
+        b[y]++;
+    }
+
+    if (a.size() < n or b.size() < n) cout << "YES\n";
+    else cout << "NO\n";
 
     return;
 }

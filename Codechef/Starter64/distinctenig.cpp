@@ -21,7 +21,41 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    vector<int> a(2LL*n);
+
+    for (auto &x: a) cin >> x;
+
+    map<int,int> mp;
+
+	for (auto x: a) mp[x]++;
+
+	vector<int> v;
+
+	for (auto x: mp) {
+		v.pb(x.second);
+	}
+
+	sort(all(v));
+
+	int k = sz(v);
+
+	int sum = 0;
+
+	for (int i = 0; i < k-1; i++) {
+		sum += v[i];
+	}
+
+	int mx = (n+1)/2;
+
+	int tot = v[k-1]-sum;
+
+	if (tot > 2*mx) {
+		cout << "NO\n";
+	}
+	else {
+		cout << "YES\n";
+	}
 
     return;
 }

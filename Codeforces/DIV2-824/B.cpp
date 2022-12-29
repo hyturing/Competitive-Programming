@@ -21,7 +21,28 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    vector<int> a(n);
+
+    for (auto &x: a) cin >> x;
+
+    sort(all(a));
+
+	int k = 2*a[0]-1;
+
+	int count = 0;
+
+	for (int i = 1; i < n; i++) {
+		if (a[i] <= k) continue;
+		else {
+			if (a[i]%k == 0) count += a[i]/k;
+			else count += a[i]/k+1;
+
+            count = count-1;
+		}
+	}
+
+	cout << count << endl;
 
     return;
 }

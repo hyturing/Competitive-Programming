@@ -21,7 +21,37 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+
+    int a = 0, b = 0;
+
+    for (int i = 0; i < n-2; i++) {
+        a = a^i;
+        b = b^(i+1);
+    }
+
+    vector<int> ans(n);
+
+    if (a == 0) {
+        for (int i = 0; i < n-2; i++) {
+            ans[i] = i+1;
+        }   
+        swap(a, b);
+    }
+    else {
+        for (int i = 0; i < n-2; i++) {
+            ans[i] = i;
+        }
+    }
+
+    int x = (1<<31)-1;
+
+    ans[n-2] = x;
+
+    ans[n-1] = a^x;
+
+    for (auto x: ans) cout << x << " "; cout << endl;
+
 
     return;
 }

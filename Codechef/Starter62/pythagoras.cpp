@@ -21,7 +21,27 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+
+    int fac = 1;
+
+    while (n%4 == 0) {
+        n /= 4;
+        fac *= 2;
+    }
+
+    for (int i = 0; i*i < n; i++) {
+        int k = n-i*i;
+
+        int j = sqrt(k);
+
+        if (j*j == k) {
+            cout << i*fac << " " << j*fac << endl;
+            return;
+        }
+    }
+
+    cout << -1 << endl;
 
     return;
 }

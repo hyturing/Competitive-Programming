@@ -21,7 +21,28 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+
+    if (n == 3) {
+    	cout << -1 << endl;
+    	return;
+    }
+
+    if (n&1) {
+    	int k = n/2+1;
+
+    	int r = n-k;
+
+    	for (int i = 0; i < r; i++) {
+    		cout << n << " ";
+    		n--;
+    	}
+
+    	for (int i = 1; i <= k; i++) cout << i << " "; cout << endl;
+    }
+    else {
+    	for (int i = 1; i <= n; i++) cout << n-i+1 << " "; cout << endl;
+    }
 
     return;
 }

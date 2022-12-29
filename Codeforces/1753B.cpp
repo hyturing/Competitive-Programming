@@ -21,7 +21,28 @@ void solve() {
 
     // code here
     
-    
+    int n, x; cin >> n >> x;
+
+    vector<int> a(n);
+    for (auto &x: a) cin >> x;
+
+    vector<int> f(x+1, 0LL);
+
+    for (int i = 0; i < n; i++) {
+        f[a[i]]++;
+    }
+
+    for (int i = 1; i < x; i++) {
+        if (f[i]%(i+1) == 0) {
+            f[i+1] += f[i]/(i+1);
+        }
+        else {
+            cout << "NO\n";
+            return;
+        }
+    }
+
+    cout << "YES\n";
 
     return;
 }
@@ -31,7 +52,7 @@ int32_t main() {
     cin.tie(nullptr);
 
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     
     for (int i = 1; i <= tc; i++) {
         // cout << "Case #" << i << ": ";

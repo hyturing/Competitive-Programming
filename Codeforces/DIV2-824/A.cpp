@@ -21,7 +21,31 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+
+    int t = n-3;
+
+    int k = t-1;
+
+    int a, b, c;
+
+    if (k%3 == 0) {
+        a = 1;
+        b = k/3;
+        c = (k/3)*2;
+    }
+    else if (k%3 == 1){
+        a = 1;
+        b = k/3;
+        c = (k/3)*2+1;
+    }
+    else {
+        a = 1;
+        b = k/3+1;
+        c = (k/3)*2+1;
+    }
+
+    cout << min(abs(a-b), min(abs(b-c), abs(c-a))) << endl;
 
     return;
 }

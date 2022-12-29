@@ -21,7 +21,37 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    string s; cin >> s;
+
+    string ans = "";
+
+    int i = n-1;
+
+    while (i >= 0) {
+    	if (s[i] == '0') {
+    		int sum = (int)(s[i-1]-'0')+10*(s[i-2]-'0');
+
+    		char a = 'a'+(sum-1);
+
+    		ans.push_back(a);
+
+    		i -= 3;
+    	}
+    	else {
+    		int sum = (int)(s[i]-'0');
+
+    		char a = 'a'+(sum-1);
+
+    		ans.push_back(a);
+
+    		i--;
+    	}
+    }
+
+    reverse(ans.begin(), ans.end());
+
+    cout << ans << endl;
 
     return;
 }

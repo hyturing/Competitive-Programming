@@ -21,8 +21,36 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    char c; cin >> c;
 
+    string s; cin >> s;
+
+    vector<int> g;
+
+    for (int i = 0; i < n; i++) {
+    	if (s[i] == 'g') g.push_back(i);
+    }
+
+    int mx = 0;
+
+    for (int i = 0; i < n; i++) {
+    	if (s[i] == c and s[i] != 'g') {
+    		auto it = lower_bound(g.begin(), g.end(), i);
+
+
+    		if (it == g.end()) {
+    			mx = max(g[0]+n-i, mx);
+    			continue;
+    		}
+
+    		// int k = it-g.begin();
+
+    		mx = max(mx, *it-i);
+    	}
+    }
+
+    cout << mx << endl;
     return;
 }
 

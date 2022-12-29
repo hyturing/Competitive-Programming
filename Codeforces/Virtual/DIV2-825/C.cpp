@@ -17,11 +17,43 @@ const int MM = 998244353;
 const int N = 1e5+5;
 const long long INF = 1e18;
 
+
+
 void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    int a[n];
+
+    for (auto &x: a) cin >> x;
+
+    vector<int> v;
+
+    int sum = 0, cnt = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (a[i] > cnt) {
+            sum++;
+            cnt++;
+        }
+        else {
+            v.push_back(sum);
+            sum = 0;
+            cnt = 0;
+            i--;
+        }
+    }
+
+    if (sum > 0) v.push_back(sum);
+
+    int ans = 0;
+
+    for (auto x: v) {
+        ans += (x*x+x)/2;
+    }
+
+    cout << ans << endl;
 
     return;
 }

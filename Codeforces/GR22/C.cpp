@@ -21,7 +21,43 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    vector<int> a(n);
+
+    for (auto &x: a) cin >> x;
+
+    int odd = 0, even = 0;
+
+	for (auto x: a) {
+		if (x&1) odd++;
+		else even++;
+	}
+
+	if (even == 0 or odd == 0) {
+		if (even == 0) {
+			int k = odd/2+odd%2;
+
+			if (k&1) cout << "Bob" << endl;
+			else cout << "Alice" << endl;
+		}
+		else {
+			cout << "Alice" << endl;
+		}
+
+		return;
+	}
+
+	if (odd&1) {
+		cout << "Alice" << endl;
+	}
+	else {
+		int k = odd/2;
+
+		if (k%2 == 0) {
+			cout << "Alice" << endl;
+		}
+		else cout << "Bob" << endl;
+	}
 
     return;
 }

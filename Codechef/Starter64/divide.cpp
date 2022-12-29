@@ -21,7 +21,24 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    vector<int> a(n);
+
+    for (auto &x: a) cin >> x;
+
+    int g = a[0];
+
+	for (auto x: a) {
+		g = __gcd(g,x);
+	}
+
+	int cnt = 0;
+
+	for (auto x: a) {
+		if (x != g) cnt++;
+	}
+
+	cout << cnt << endl;
 
     return;
 }

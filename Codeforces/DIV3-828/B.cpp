@@ -21,7 +21,44 @@ void solve() {
 
     // code here
     
-    
+    int n, q; cin >> n >> q;
+
+    vector<int> a(n);
+    for (auto &x: a) cin >> x;
+
+    int odd = 0, even = 0, s1 = 0, s0 = 0;
+
+	for (auto x: a) {
+		if (x&1) {s1+=x; odd++;}
+		else {s0+=x; even++;}
+	}
+
+	for (int i = 0; i < q; i++) {
+		int t, x; cin >> t >> x;
+
+		if (t == 0) {
+			if (x&1) {
+				s0 += even*x;
+				odd += even;
+				even = 0;
+			}
+			else {
+				s0 += even*x;
+			}
+		}
+		else {
+			if (x&1) {
+				s1 += odd*x;
+				even += odd;
+				odd = 0;
+			}
+			else {
+				s1 += odd*x;
+			}
+		}
+
+		cout << s0+s1 << endl;
+	}
 
     return;
 }

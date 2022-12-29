@@ -21,7 +21,18 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    vector<int> v(n);
+    for (auto &x: v) cin >> x;
+
+    int a = 0, b = 0;
+
+	for (auto x: v) {
+		if (x > 0) a += x;
+		else b += x;
+	}
+
+	cout << abs(abs(a)-abs(b)) << endl;
 
     return;
 }

@@ -21,7 +21,25 @@ void solve() {
 
     // code here
     
-    
+    int n, x; cin >> n >> x;
+    vector<int> a(n);
+
+    for (auto &x: a) cin >> x;
+
+    int mi = a[0], mx = a[0];
+    int ans = 0;
+
+    for (int i = 0; i < n; i++) {
+        mi = min(mi, a[i]);
+        mx = max(mx, a[i]);
+
+        if (mx-mi > 2*x) {
+            ans++;
+            mi = a[i], mx = a[i];
+        }
+    }
+
+    cout << ans << endl;
 
     return;
 }

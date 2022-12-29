@@ -21,7 +21,34 @@ void solve() {
 
     // code here
     
-    
+    int n, m; cin >> n >> m;
+    vector<int> a(n), b(m);
+
+    string a, b;
+    cin >> a >> b;
+
+    bool ok = true;
+
+    if (m > n) {
+        cout << "NO\n";
+        return;
+    }   
+
+    int j = m-1, i = n-1;
+
+    while (j > 0) {
+        if (a[i] != b[j]) ok = false;
+        i--, j--;
+    }
+
+    bool ok2 = false;
+
+    for (int k = 0; k <= i; k++) if (a[k] == b[0]) ok2 = true;
+
+    if (!ok2) ok = false;
+
+    if (ok) cout << "YES\n";
+    else cout << "NO\n";
 
     return;
 }

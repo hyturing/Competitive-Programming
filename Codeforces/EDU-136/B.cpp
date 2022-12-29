@@ -21,7 +21,26 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+
+    int arr[n];
+    for (auto &x: arr) cin >> x;
+
+
+    int cur[n];
+
+    cur[0] = arr[0];
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > 0 and cur[i-1] >= arr[i]) {
+            cout << -1 << endl;
+            return;
+        }
+
+        cur[i] = cur[i-1]+arr[i];
+    }
+
+    for (auto x: cur) cout << x << " "; cout << endl;
 
     return;
 }

@@ -21,6 +21,29 @@ void solve() {
 
     // code here
     
+    int n, m; cin >> n >> m;
+
+    for (int a = 1; a <= n; a++) {
+    	for (int b = 1; b <= m; b++) {
+    		bool ok = true;
+    		for (int i = 1; i <= n; i++) {
+    			for (int j = 1; j <= m; j++) {
+    				if (a == i or b == j) continue;
+    				int dis = abs(a-i)+abs(b-j);
+
+    				if (dis == 3) ok = false;
+    			}
+    		}
+
+    		if (ok) {
+    			cout << a << " " << b << endl;
+    			return;
+    		}
+    	}
+    }
+
+
+    cout << 1 << " " << 1 << endl;
     
 
     return;

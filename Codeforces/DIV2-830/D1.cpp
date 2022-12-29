@@ -21,7 +21,37 @@ void solve() {
 
     // code here
     
+	int n; cin >> n;
+	set<int> s;
+
+	s.insert(0);
+    map<int,int> m;
     
+	for (int j = 0; j < n; j++) {
+		char k;
+        int num;
+        cin >> k >> num;
+
+        if (k == '+') {
+            s.insert(num);
+        }
+        else {
+            int i;
+
+            if (m.find(num) != m.end()) {
+                i = m[num];
+            }
+            else i = num;
+
+            while (s.find(i) != s.end()) {
+                i += num;
+            }
+
+            m[num] = i;
+            cout << i << endl;
+        }
+        
+	}    
 
     return;
 }
@@ -31,7 +61,7 @@ int32_t main() {
     cin.tie(nullptr);
 
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     
     for (int i = 1; i <= tc; i++) {
         // cout << "Case #" << i << ": ";

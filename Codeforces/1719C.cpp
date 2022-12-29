@@ -21,7 +21,30 @@ void solve() {
 
     // code here
     
-    
+	int n, q; cin >> n >> q;
+
+	vector<int> a(n);
+	for (auto &x: a) cin >> x;
+
+	int index, mx = 0;
+
+	for (int i = 0; i < n; i++) {
+		if (a[i] >= mx) {
+			mx = a[i];
+			index = i;
+		}
+	}
+
+	int shift = n-index;
+
+	for (int i = 0; i < q; i++) {
+		int x, k; cin >> x >> k;
+		x--;
+
+		int ans = 0;
+
+		if 
+	}
 
     return;
 }

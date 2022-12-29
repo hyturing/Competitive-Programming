@@ -21,7 +21,16 @@ void solve() {
 
     // code here
     
-    
+    int n;
+    cin >> n;
+
+    vector<int> a(n);
+
+    for (int i = 1; i <= n; i++) a[i-1] = i;
+
+    swap(a[1], a[n-1]);
+
+    for (auto x: a) cout << x << " "; cout << endl;
 
     return;
 }

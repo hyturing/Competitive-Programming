@@ -21,7 +21,28 @@ void solve() {
 
     // code here
     
-    
+    int n; cin >> n;
+    vector<int> a(n);
+    set<int> s;
+
+    for (auto &x: a) {
+    	cin >> x;
+    	s.insert(x);
+    }
+
+    sort(all(a));
+
+	int sum = 0;
+
+	for (int i = 0; i < n-2; i++) {
+		sum = max(sum, a[n-1]+a[i+1]-2*a[i]);
+	}
+
+	for (int i = 2; i < n; i++) {
+		sum = max(sum, 2*a[i]-a[i-1]-a[0]);
+	}
+
+	cout << sum << endl;
 
     return;
 }
